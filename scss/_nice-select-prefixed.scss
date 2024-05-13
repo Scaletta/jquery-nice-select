@@ -20,7 +20,8 @@ $arrow_color: $gray !default;
   background-color: #fff;
   border-radius: $input_border_radius;
   border: solid 1px $gray_light; 
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box; 
+          box-sizing: border-box;
   clear: both;
   cursor: pointer;
   display: block;
@@ -35,8 +36,8 @@ $arrow_color: $gray !default;
   padding-right: $dropdown_padding + 12;
   position: relative;
   text-align: left !important;
-  -webkit-transition  
-: all 0.2s ease-in-out;
+  -webkit-transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
   transition: all 0.2s ease-in-out;
   -webkit-user-select: none;
      -moz-user-select: none;
@@ -68,8 +69,8 @@ $arrow_color: $gray !default;
     -webkit-transform: rotate(45deg);
         -ms-transform: rotate(45deg);
             transform: rotate(45deg);
-    -webkit-transition  
-: all 0.15s ease-in-out;
+    -webkit-transition: all 0.15s ease-in-out;
+    -o-transition: all 0.15s ease-in-out;
     transition: all 0.15s ease-in-out;
     width: 5px;
   }
@@ -131,8 +132,10 @@ $arrow_color: $gray !default;
   .list {
     background-color: #fff;
     border-radius: $input_border_radius;
-    box-shadow: 0 0 0 1px rgba($gray_dark, .11);
-    box-sizing: border-box;
+    -webkit-box-shadow: 0 0 0 1px rgba($gray_dark, .11);
+            box-shadow: 0 0 0 1px rgba($gray_dark, .11);
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
     margin-top: 4px;
     opacity: 0;
     overflow: hidden;
@@ -143,11 +146,11 @@ $arrow_color: $gray !default;
     -webkit-transform-origin: 50% 0;
         -ms-transform-origin: 50% 0;
             transform-origin: 50% 0;
-    -webkit-transform: scale(.75) translateY(- $input_height / 2);
-        -ms-transform: scale(.75) translateY(- $input_height / 2);
-            transform: scale(.75) translateY(- $input_height / 2);
-    -webkit-transition  
-: all .2s cubic-bezier(0.5, 0, 0, 1.25), opacity .15s ease-out;
+    -webkit-transform: scale(.75) translateY(calc(-1 * $input_height / 2));
+        -ms-transform: scale(.75) translateY(calc(-1 * $input_height / 2));
+            transform: scale(.75) translateY(calc(-1 * $input_height / 2));
+    -webkit-transition: all .2s cubic-bezier(0.5, 0, 0, 1.25), opacity .15s ease-out;
+    -o-transition: all .2s cubic-bezier(0.5, 0, 0, 1.25), opacity .15s ease-out;
     transition: all .2s cubic-bezier(0.5, 0, 0, 1.25), opacity .15s ease-out;
     z-index: 9;
     &:hover .option:not(:hover) {
@@ -164,8 +167,8 @@ $arrow_color: $gray !default;
     padding-left: $dropdown_padding;
     padding-right: $dropdown_padding + 11;
     text-align: left;
-    -webkit-transition  
-: all 0.2s;
+    -webkit-transition: all 0.2s;
+    -o-transition: all 0.2s;
     transition: all 0.2s;
     &:hover, &.focus, &.selected.focus { 
       background-color: $gray_lighter;

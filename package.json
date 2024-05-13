@@ -4,16 +4,17 @@
   "description": "A lightweight jQuery plugin that replaces native select elements with customizable dropdowns.",
   "main": "./js/jquery.nice-select.min.js",
   "dependencies": {
-    "jquery": "^2.2.3"
+    "jquery": "^3.7.1",
+    "sass": "^1.77.1"
   },
   "devDependencies": {
-    "gulp": "^3.9.0",
-    "gulp-autoprefixer": "^3.1.0",
+    "gulp": "^5.0.0",
+    "gulp-autoprefixer": "^5.0.0",
     "gulp-jshint": "^2.0.0",
-    "gulp-rename": "^1.2.2",
-    "gulp-sass": "^2.1.1",
-    "gulp-uglify": "^1.5.1",
-    "jshint": "^2.8.0"
+    "gulp-rename": "^2.0.0",
+    "gulp-sass": "^5.1.0",
+    "gulp-uglify": "^3.0.2",
+    "jshint": "^2.13.6"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"

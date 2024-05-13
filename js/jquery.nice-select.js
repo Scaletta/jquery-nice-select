@@ -8,7 +8,7 @@
     
     // Methods
     if (typeof method == 'string') {      
-      if (method == 'update') {
+      if (method === 'update') {
         this.each(function() {
           var $select = $(this);
           var $dropdown = $(this).next('.nice-select');
@@ -23,7 +23,7 @@
             }
           }
         });
-      } else if (method == 'destroy') {
+      } else if (method === 'destroy') {
         this.each(function() {
           var $select = $(this);
           var $dropdown = $(this).next('.nice-select');
@@ -33,7 +33,7 @@
             $select.css('display', '');
           }
         });
-        if ($('.nice-select').length == 0) {
+        if ($('.nice-select').length === 0) {
           $(document).off('.nice_select');
         }
       } else {
@@ -69,7 +69,7 @@
       
       $dropdown.find('.current').html($selected.data('display') || $selected.text());
       
-      $options.each(function(i) {
+      $options.each(function() {
         var $option = $(this);
         var display = $option.data('display');
 
@@ -90,7 +90,7 @@
     $(document).off('.nice_select');
     
     // Open/close
-    $(document).on('click.nice_select', '.nice-select', function(event) {
+    $(document).on('click.nice_select', '.nice-select', function() {
       var $dropdown = $(this);
       
       $('.nice-select').not($dropdown).removeClass('open');
@@ -113,7 +113,7 @@
     });
     
     // Option click
-    $(document).on('click.nice_select', '.nice-select .option:not(.disabled)', function(event) {
+    $(document).on('click.nice_select', '.nice-select .option:not(.disabled)', function() {
       var $option = $(this);
       var $dropdown = $option.closest('.nice-select');
       
@@ -132,7 +132,7 @@
       var $focused_option = $($dropdown.find('.focus') || $dropdown.find('.list .option.selected'));
       
       // Space or Enter
-      if (event.keyCode == 32 || event.keyCode == 13) {
+      if (event.keyCode === 32 || event.keyCode === 13) {
         if ($dropdown.hasClass('open')) {
           $focused_option.trigger('click');
         } else {
@@ -140,7 +140,7 @@
         }
         return false;
       // Down
-      } else if (event.keyCode == 40) {
+      } else if (event.keyCode === 40) {
         if (!$dropdown.hasClass('open')) {
           $dropdown.trigger('click');
         } else {
@@ -152,7 +152,7 @@
         }
         return false;
       // Up
-      } else if (event.keyCode == 38) {
+      } else if (event.keyCode === 38) {
         if (!$dropdown.hasClass('open')) {
           $dropdown.trigger('click');
         } else {
@@ -164,12 +164,12 @@
         }
         return false;
       // Esc
-      } else if (event.keyCode == 27) {
+      } else if (event.keyCode === 27) {
         if ($dropdown.hasClass('open')) {
           $dropdown.trigger('click');
         }
       // Tab
-      } else if (event.keyCode == 9) {
+      } else if (event.keyCode === 9) {
         if ($dropdown.hasClass('open')) {
           return false;
         }
